@@ -156,9 +156,11 @@ namespace cam_lidar_calibration
         publishBoardPointCloud();
         flag = req.operation;  // read flag published by rviz calibration panel
         // Wait for operation to complete
-        while (flag == Optimise::Request::CAPTURE)
-        {
-        }
+        
+        // change JES
+        // while (flag == Optimise::Request::CAPTURE)
+        // {
+        // }
         res.samples = optimiser_->samples.size();
         return true;
     }
@@ -1045,7 +1047,8 @@ namespace cam_lidar_calibration
             std::string target_pcd_filepath = newdatafolder + "/pcd/pose" + std::to_string(num_samples)  + "_target.pcd" ;              
             std::string full_pcd_filepath = newdatafolder + "/pcd/pose" + std::to_string(num_samples)  + "_full.pcd" ;              
             
-            ROS_ASSERT( cv::imwrite( img_filepath,  cv_ptr->image ) );   
+            // ROS_ASSERT( cv::imwrite( img_filepath,  cv_ptr->image ) );   
+            cv::imwrite( img_filepath,  cv_ptr->image );
             pcl::io::savePCDFileASCII (target_pcd_filepath, *cloud_bounded);
             pcl::io::savePCDFileASCII (full_pcd_filepath, *pointcloud);
             ROS_INFO_STREAM("Image and pcd file saved");

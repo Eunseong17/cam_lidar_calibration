@@ -1,6 +1,8 @@
 # Camera-LiDAR Calibration
 
-This package estimates the calibration parameters that transforms the camera frame (parent) into the lidar frame (child). We aim to simplify the calibration process by optimising the pose selection process to take away the tedious trial-and-error of having to re-calibrate with different poses until a good calibration is found. We seek to obtain calibration parameters as an estimate with uncertainty that fits the entire scene instead of solely fitting the target, which many existing works struggle with. Our proposed approach overcomes the limitations of existing target-based calibration methods, namely from user error and overfitting of the target. For more details, please take a look at our [paper](https://arxiv.org/abs/2103.12287). 
+This is the official code release of the ITSC 2021 paper, ["Optimising the selection of samples for robust lidar camera calibration"](https://arxiv.org/abs/2103.12287). 
+
+This package estimates the calibration parameters that transforms the camera frame (parent) into the lidar frame (child). We aim to simplify the calibration process by optimising the pose selection process to take away the tedious trial-and-error of having to re-calibrate with different poses until a good calibration is found. We seek to obtain calibration parameters as an estimate with uncertainty that fits the entire scene instead of solely fitting the target, which many existing works struggle with. Our proposed approach overcomes the limitations of existing target-based calibration methods, namely from user error and overfitting of the target. For more details, please take a look at our paper.
 
 We also provide a [video tutorial](https://youtu.be/WmzEnjmffQU) for this package which you can follow alongside this readme. 
 
@@ -10,6 +12,8 @@ We also provide a [video tutorial](https://youtu.be/WmzEnjmffQU) for this packag
 <em><b>Left:</b> Our sensor setup at the Australian Centre for Field Robotics (ACFR). <b>Right:</b> Calibration results of this package with an Nvidia gmsl camera to both Baraja Spectrum-Scan™ (top) and Velodyne VLP-16 (bottom). The projection of Baraja Spectrum-Scan™ has some ground points (yellow) on the chessboard due to the difference in perspective of camera and lidar.</em>
 </p>
 
+<b>Note:</b> In the paper, equation (2) which shows the equation for the condition number has a typo. The correct equation for calculating the condition number is  implemented in this repo. The formula is: ![conditionnum_formula](https://user-images.githubusercontent.com/39115809/134602161-11fc2091-34e6-49af-9edc-79bebe631a27.gif)
+    
 # 1. Getting started
 ## 1.1 Installation 
 
@@ -201,11 +205,14 @@ The baseline calibration algorithm was from Verma, 2019. You can find their [pap
 
 Please cite our work if this package helps with your research. 
 ```
-@article{tsai2021optimising,
-  title={Optimising the selection of samples for robust lidar camera calibration},
+@inproceedings{tsai2021optimising,
   author={Tsai, Darren and Worrall, Stewart and Shan, Mao and Lohr, Anton and Nebot, Eduardo},
-  journal={arXiv preprint arXiv:2103.12287},
-  year={2021}
+  booktitle={2021 IEEE International Intelligent Transportation Systems Conference (ITSC)}, 
+  title={Optimising the selection of samples for robust lidar camera calibration}, 
+  year={2021},
+  publisher = {IEEE},
+  pages={2631-2638},
+  doi={10.1109/ITSC48978.2021.9564700},
 }
 ```
 

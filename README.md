@@ -1,3 +1,37 @@
+# Changed by JES
+
+## My setting: 
+
+> OS - Ubuntu18.04  
+> ROS - ROS melodic  
+> LIDAR - Ouster OS0-32  
+> CAMERA - Fisheye(FOV 180)
+
+
+<!-- ![Alt text](/home/jairlab/catkin_ws/src/cam_lidar_calibration/data/2023-03-08_23-31-58/images/pose17.png) -->
+
+## Change:
+
+### 1. Camera_info topic publish
+
+``` 
+$ python pub.py 
+```
+### 2. Capture sample error
+Rviz stopped when I pressed the Capture sample button.  
+While statement generated an infinite loop
+ ```
+// while (flag == Optimise::Request::CAPTURE)
+// {
+// }
+ ```     
+### 3. Image Save Error
+```
+// ROS_ASSERT( cv::imwrite( img_filepath,  cv_ptr->image ) );   
+cv::imwrite( img_filepath,  cv_ptr->image );
+```
+
+
 # Camera-LiDAR Calibration
 
 This is the official code release of the ITSC 2021 paper, ["Optimising the selection of samples for robust lidar camera calibration"](https://arxiv.org/abs/2103.12287). 

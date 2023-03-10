@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="cam_lidar_calibration" type="front_pub.py" name="front_cam" />
+    <node pkg="cam_lidar_calibration" type="rear_pub.py" name="rear_cam" />
+</launch>

@@ -15,7 +15,9 @@
 ### 1. Camera_info topic publish
 
 ``` 
-$ python pub.py 
+$ rosrun cam_lidar_calibration front_pub.py
+or
+$ roslaunch cam_lidar_calibration camera_info_pub.launch (for multi camera_info publish)
 ```
 ### 2. Capture sample error
 Rviz stopped when I pressed the Capture sample button.  

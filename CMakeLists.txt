@@ -132,7 +132,9 @@ install(DIRECTORY rviz/
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/rviz
   )
 
-catkin_install_python(PROGRAMS 
+catkin_install_python(PROGRAMS
   scripts/visualise_results.py
+  camera_info/front_pub.py
+  camera_info/rear_pub.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
